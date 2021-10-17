@@ -1,6 +1,8 @@
 FROM node:16-slim
 # set app port
 ENV PORT 80
+# Location where we save state of swarm-sync
+ENV SWARM_SYNC_STATE_FILE /home/victor/swarm-sync/state
 # Location of Swarm sync configuration file
 ENV SWARM_SYNC_CONFIG_FILE /etc/swarm-sync.yml
 # Private SSH key used to generate /root/.ssh/id_rsa for private git repos

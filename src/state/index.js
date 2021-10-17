@@ -5,7 +5,11 @@ const log = require('../utils/logger');
 
 let adapter;
 const opts = { defaultValue: { stacks: {} } };
-adapter = new Memory(null, opts);
+if (stateStoragePath) {
+  adapter = new FileSync(process.env.SWARM_SYNC_STATE_FILE, opts);
+} else {
+  adapter = new Memory(null, opts);
+}
 
 const db = low(adapter);
 db.read();
