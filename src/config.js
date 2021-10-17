@@ -1,6 +1,6 @@
 const yaml = require('js-yaml');
 const fs = require('fs');
-const log = require('utils/logger');
+const log = require('/utils/logger');
 
 // Environment options
 const configFilePath = process.env.SWARM_SYNC_CONFIG_FILE || './config/swarm-sync.yml';
