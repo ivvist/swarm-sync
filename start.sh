@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -d /run/swarm-sync ]; then
+  mkdir -p /run/swarm-sync;
+fi
+
 echo "LOADING SECRETS..."
 source env_secrets_expand.sh
 
