@@ -1,12 +1,13 @@
 const yaml = require('js-yaml');
 const fs = require('fs');
-const log = require('/utils/logger');
+const log = require('./utils/logger');
 
 // Environment options
 const configFilePath = process.env.SWARM_SYNC_CONFIG_FILE || './config/swarm-sync.yml';
 
 // Load config file
 const config = yaml.safeLoad(fs.readFileSync(configFilePath, 'utf8'))['swarm-sync'] || {};
+log.info(`Config file name: ${configFilePath}`);
 log.info(`Config file: ${config}`);
 
 // CLI options override
