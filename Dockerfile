@@ -13,7 +13,9 @@ ENV SWARM_SYNC_LOGLEVEL 2
 
 WORKDIR /opt
 
-RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
+RUN apt-get update && \
+    apt-get install -y curl gnupg && \
+    curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
     apt-get update && \
     apt-get install -y apt-transport-https && \
     echo "deb https://download.docker.com/linux/debian stretch stable" | \
