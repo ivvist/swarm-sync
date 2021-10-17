@@ -1,4 +1,4 @@
-FROM node:12-slim
+FROM node:16-slim
 # set app port
 ENV PORT 80
 # Location of Swarm sync configuration file
