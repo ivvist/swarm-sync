@@ -3,15 +3,9 @@ const FileSync = require('lowdb/adapters/FileSync');
 const Memory = require('lowdb/adapters/Memory');
 const log = require('../utils/logger');
 
-const stateStoragePath = process.env.SWARM_SYNC_STATE_FILE || false;
-
 let adapter;
 const opts = { defaultValue: { stacks: {} } };
-if (stateStoragePath) {
-  adapter = new FileSync(process.env.SWARM_SYNC_STATE_FILE, opts);
-} else {
-  adapter = new Memory(null, opts);
-}
+adapter = new Memory(null, opts);
 
 const db = low(adapter);
 db.read();
