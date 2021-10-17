@@ -4,7 +4,7 @@ ENV PORT 80
 # Location of Swarm sync configuration file
 ENV SWARM_SYNC_CONFIG_FILE /etc/swarm-sync.yml
 # Location where we save state of swarm-sync
-ENV SWARM_SYNC_STATE_FILE /run/swarm-sync/state
+ENV SWARM_SYNC_STATE_FILE /home/swarm-sync/state
 # Private SSH key used to generate /root/.ssh/id_rsa for private git repos
 ENV SSH_PRIVATE_KEY false
 
