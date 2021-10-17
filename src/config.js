@@ -6,6 +6,7 @@ const configFilePath = process.env.SWARM_SYNC_CONFIG_FILE || './config/swarm-syn
 
 // Load config file
 const config = yaml.safeLoad(fs.readFileSync(configFilePath, 'utf8'))['swarm-sync'] || {};
+log.info(`Config file: ${config}`);
 
 // CLI options override
 // --bootstrap - run update/deploy only one time, do not start as daemon
