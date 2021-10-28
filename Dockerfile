@@ -35,7 +35,4 @@ RUN npm install --production && \
     chmod +x ./start.sh && \
     chmod +x ./env_secrets_expand.sh
 
-# expose port
-EXPOSE 80
-
 ENTRYPOINT [ "./start.sh"]
