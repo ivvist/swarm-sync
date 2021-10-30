@@ -12,8 +12,18 @@ async function checkAndUpdateImages() {
   log.debug(managedServices.map(s => s.name).join(', '));
 
   for (const service of managedServices) {
+      log.trace(`Service pattern: '$service.pattern'`)
+      log.trace(`Service name: '$service.name'`)
+      log.trace(`Service id: '$service.id'`)
+      log.trace(`Service image tag: '$service.current_image_tag'`)
+      log.trace(`Service image repo: '$service.current_image_repo'`)
     if (service.pattern) {
       await updateTagCache(service.current_image_repo, service.pattern);
+      log.trace(`2Service pattern: '$service.pattern'`)
+      log.trace(`2Service name: '$service.name'`)
+      log.trace(`2Service id: '$service.id'`)
+      log.trace(`2Service image tag: '$service.current_image_tag'`)
+      log.trace(`2Service image repo: '$service.current_image_repo'`)
       const newestTag = getNewestTagFromCache(
         service.current_image_repo,
         service.pattern
